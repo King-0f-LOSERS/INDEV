@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar with Dropdown</title>
+    <link rel="stylesheet" href="{% static 'registration_forms.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MyLogo</div>
+        <ul class="nav-links">
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Shops</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">My Cart</a></li>
+        </ul>
+        <div class="dropdown">
+            <button class="dropbtn">Login/Register</button>
+            <div class="dropdown-content">
+                <a href="login_buyer/">Login as Buyer</a>
+                <a href="login_seller/">Login as Seller</a>
+                <a href="register_buyer/">Register as Buyer</a>
+                <a href="register_seller/">Register as Seller</a>
+            </div>
+        </div>
+    </nav>
+
+</body>
+</html>

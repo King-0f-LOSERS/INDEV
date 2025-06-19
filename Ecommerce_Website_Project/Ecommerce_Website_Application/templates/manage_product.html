@@ -1,0 +1,52 @@
+{% extends "seller_base.html" %}
+{% block content %}
+{%load static%}
+
+<h1>Manage Products</h1>
+<div class="container">
+<table class="Cart-Table">
+    <thead>
+        <tr>
+            <th>Sno.</th>
+            <th>Product Image</th>
+            <th>Product</th>
+            <th>Status</th>
+            <th>Set Status</th>
+            <th>Delete Product</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for Product in Product_Data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td><img src="{{ Product.product_img.url}}" alt="Image" width="100" height="100"></td>
+            <td>{{ Product.product_name }}</td>
+            <td>{{ Product.get_product_status_display }}</td>
+            
+            {%if Product.product_status == 'In_Stock' %}
+            <form action="/modifyproduct/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name='product_id' value="{{ Product.id }}"></input>
+                <input type="hidden" name ='status' value="Out_of_Stock"></input>
+                <td><button class="red" type="submit">Out of Stock</button></td>
+            </form> 
+                
+            {%elif Product.product_status == 'Out_of_Stock' %}
+            <form action="/modifyproduct/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name='product_id' value="{{ Product.id }}"></input>
+                <input type="hidden" name ='status' value="In_Stock"></input>
+                <td><button class="checkout" type="submit">In Stock</button></td>
+            </form> 
+            {%endif%}
+            <form action="/deleteproduct/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name='product_id' value="{{ Product.id }}"></input>
+                <td><button class="red" type="submit">Delete</button></td>
+            </form> 
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

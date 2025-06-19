@@ -1,0 +1,57 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest</title>
+    <link rel="stylesheet" href="{% static 'registration_forms.css' %}">
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <nav class="navbar">
+        <div class="logo">INDEV</div>
+        <ul class="nav-links">
+            <li><a href="/buyer/">All Products</a></li>
+            <li><a href="/shops/">All Shops</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="#">My Cart</a></li>
+            <li><a href="#">My Order</a></li>
+        </ul>
+        <div class="logout">
+            <a href="/logout_buyer/"><button type="button" class="logout" >Logout</button></a>
+        </div>
+        </nav>
+    {% else %}
+        <nav class="navbar">
+        <div class="logo">INDEV</div>
+        <ul class="nav-links">
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/login_buyer/">Login As Buyer</a></li>
+            <li><a href="/login_seller/">Login As Seller</a></li>
+            <li><a href="/register_buyer/">Register As Buyer</a></li>
+            <li><a href="/register_seller/">Register As Seller</a></li>
+        </ul>
+        </nav>
+    {% endif %}
+    
+    <h2>About Us</h2>
+    <div class="about-card-container">
+        <div class="about-card">
+            <img src="{% static 'images.jpg' %}" alt="Image" width="250">
+            <h3>Card Title 1</h3>
+            <p>Description for card 1.</p>
+        </div>
+        <div class="about-card">
+            <img src="{% static 'images.jpg' %}" alt="Image" width="250">
+            <h3>Card Title 2</h3>
+            <p>Description for card 2.</p>
+        </div>
+        <div class="about-card">
+            <img src="{% static 'images.jpg' %}" alt="Image" width="250">
+            <h3>Card Title 3</h3>
+            <p>Description for card 3.</p>
+        </div>
+    </div>
+</body>
+</html>

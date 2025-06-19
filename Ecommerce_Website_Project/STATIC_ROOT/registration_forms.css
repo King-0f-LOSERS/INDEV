@@ -1,0 +1,312 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    /*background-color: #f4f4f4;*/
+}
+.guest_body{
+    background-image: url('Background/guest.jpg');
+    background-size: 100%;
+    background-repeat: repeat-y;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.seller_body{
+    background-image: url('Background/seller.jpg');
+    background-size: 100%;
+    background-repeat: repeat-y;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.buyer_body{
+    background-image: url('Background/buyer.jpg');
+    background-size: 100%;
+    background-repeat: repeat-y;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2D336B;
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dropbtn:hover {
+    background-color: #218838;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f4f4f4;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+h1,h2 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+}
+
+.Cart-Table{
+    background-color: white;
+    justify-self: center;
+    justify-content: center;
+    justify-items: center;
+    border-collapse: collapse;
+    width: 80%;
+    border: 2px solid black;
+}
+
+.Cart-Table th, .Cart-Table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border: 1px solid black;
+}
+
+td {
+    padding: 8px 5px;
+}
+
+input, select, textarea {
+    width: 95%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.red {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff0055;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.red:hover {
+    background-color: #ac2b3a;
+}
+
+.github {
+    width: 100%;
+    padding: 10px;
+    background-color: #6e5494;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.github:hover {
+    background-color: #333;
+}
+button:hover {
+    background-color: #218838;
+}
+
+.product-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.product-card {
+    background: white;
+    width: 250px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    margin: 10px;
+}
+.about-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.about-card {
+    background: white;
+    width: 400px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    margin: 10px;
+}
+.shop-card-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.shop-card {
+    background: white;
+    width: 500px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    margin: 10px;
+}
+.order-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.order-card {
+    background: white;
+    width: 250px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    margin: 10px;
+}
+.report-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.report-card {
+    background: white;
+    width: 500px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    margin: 10px;
+}
+.site-footer {
+    margin-top: auto;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #2D336B;
+    color:#f8f9fa;
+    font-size: 14px;
+    border-top: 1px solid #ccc;
+}

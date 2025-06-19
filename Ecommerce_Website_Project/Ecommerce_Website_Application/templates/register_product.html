@@ -1,0 +1,34 @@
+{% extends "seller_base.html" %}
+{% block content %}
+{%load static%}
+    <div class="container">
+        <div class="card">
+            <h2>Product Registration</h2>
+            <form action='/register_product/' id="product-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %} 
+                <table>
+                    <tr><td>Seller Name:</td><td>
+                        <select name="seller_name" required>
+                            <option>Select</option>
+                            {% for seller in Seller_Data %}
+                                <option value={{seller.seller_name}}>{{seller.seller_name}}</option>
+                            {% endfor %}
+                       </select>
+                    </td></tr>
+                    <tr><td>Product Name:</td><td><input type="text" name="product_name" required></input></td></tr>
+                    <tr><td>Product Description:</td><td><input type="text" name="product_description" required></input></td></tr>
+                    <tr><td>Price:</td><td><input type="number" name="product_price" required></input></td></tr>
+                    <tr><td>Product Image:</td><td><input type="file" name="product_image" required></input></td></tr>
+                    <tr><td>Category:</td><td>
+                        <select name="category_name" required>
+                            <option>Select</option>
+                            {% for category in Category_Data %}
+                                <option value={{category.category_name}}>{{category.category_name}}</option>
+                            {% endfor %}
+                       </select>
+                </table>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>     
+    {% endblock %}

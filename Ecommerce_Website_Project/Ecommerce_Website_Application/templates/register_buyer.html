@@ -1,0 +1,32 @@
+{% extends "guest_base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="card">
+            <h2>Buyer Registration</h2>
+            <form action='/register_buyer/' id="buyer-form" method="post">
+                {% csrf_token %} 
+                <table>
+                    <tr><td>Create Username:</td><td><input type="text" name="create_username" required></input></td></tr>
+                    <tr><td>Create Password:</td><td><input type="password" name="create_password" required></input></td></tr>
+                    <tr><td>Confirm Password:</td><td><input type="password" name="confirm_password" required></input></td></tr>
+                    <tr><td>First Name:</td><td><input type="text" name="first_name" required></input></td></tr>
+                    <tr><td>Last Name:</td><td><input type="text" name="last_name" required></input></td></tr>
+                    <tr><td>Date of Birth:</td><td><input type="date" name="date" required></input></td></tr>
+                    <tr><td>Gender:</td><td>
+                        <select name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </td></tr>
+                    <tr><td>Aadhaar Number:</td><td><input type="text" name="aadhaar" required></input></td></tr>
+                    <tr><td>Email:</td><td><input type="email" name="email" required></input></td></tr>
+                    <tr><td>Contact:</td><td><input type="tel" name="contact" required></input></td></tr>
+                    <tr><td>Address:</td><td><textarea name="address" required></textarea></td></tr>
+                </table>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

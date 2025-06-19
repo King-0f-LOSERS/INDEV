@@ -1,0 +1,26 @@
+{% extends "guest_base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="card">
+        <h2>Seller Registration</h2>
+        <form action='/register_seller/' id="seller-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %} 
+            <table>
+                <tr><td>Create Username:</td><td><input type="text" name="create_username" required></input></td></tr>
+                <tr><td>Create Password:</td><td><input type="password" name="create_password" required></input></td></tr>
+                <tr><td>Confirm Password:</td><td><input type="password" name="confirm_password" required></input></td></tr>
+                <tr><td>Seller Name:</td><td><input type="text" name="seller_name" required></input></td></tr>
+                <tr><td>Seller Description:</td><td><textarea name="seller_description" required></textarea></td></tr>
+                <tr><td>Seller Logo:</td><td><input type="file" name="logo" required></input></td></tr>
+                <tr><td>Seller Banner:</td><td><input type="file" name="banner" required></input></td></tr>
+                <tr><td>GSTIN Number:</td><td><input type="text" name="gstin" required></input></td></tr>
+                <tr><td>Email:</td><td><input type="email" name="email" required></input></td></tr>
+                <tr><td>Contact:</td><td><input type="tel" name="contact" required></input></td></tr>
+                <tr><td>Address:</td><td><textarea name="address" required></textarea></td></tr>
+            </table>
+            <button type="submit">Register</button>
+        </form>
+        </div>
+    </div>
+{% endblock %}

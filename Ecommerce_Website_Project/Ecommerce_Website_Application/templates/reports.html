@@ -1,0 +1,31 @@
+{% extends "seller_base.html" %}
+{% block content %}
+{%load static%}
+<h1>Reports</h1>
+<div class="report-card-container">
+    <div class="report-card">
+        <img src="{% static 'Report/product.png' %}" alt="Image" width="250">
+        <h1>All Out of Stock Product Report</h1>
+        <hr>
+        <a href="/generate_product_csv/"><button class="github">Generate and Download Report In CSV Format</button> </a>
+    </div>
+    <div class="report-card">
+        <img src="{% static 'Report/orders.png' %}" alt="Image" width="250">
+        <h1>All Accepted Orders Report</h1>
+        <hr>
+        <a href="/generate_order_csv/"><button class="github">Generate and Download Report In CSV Format</button> </a>
+    </div>
+    <div class="report-card">
+        <img src="{% static 'Report/product.png' %}" alt="Image" width="250">
+        <h1>All Out of Stock Product Report</h1>
+        <hr>
+        <a href="/generate_product_pdf/"><button class="github">Generate and Download Report In PDF Format</button> </a>
+    </div>
+    <div class="report-card">
+        <img src="{% static 'Report/orders.png' %}" alt="Image" width="250">
+        <h1>All Accepted Orders Report</h1>
+        <hr>
+        <a href="/generate_order_pdf/"><button class="github">Generate and Download Report In PDF Format</button> </a>
+    </div>
+</div>
+{% endblock %}

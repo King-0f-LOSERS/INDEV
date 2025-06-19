@@ -1,0 +1,39 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer</title>
+    <link rel="stylesheet" href="{% static 'registration_forms.css' %}">
+    <link rel ="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+</head>
+<body class="buyer_body">
+    {% if user.is_authenticated and request.session.type == 'BUYER' %}
+    <nav class="navbar">
+        <div class="logo">INDEV</div>
+        <ul class="nav-links">
+            <li><a href="/buyer/">All Products</a></li>
+            <li><a href="/shops/">All Shops</a></li>
+            <li><a href="/categories/">All Categories</a></li>
+            <li><a href="/cart/">My Cart</a></li>
+            <li><a href="/orders/">My Order</a></li>
+        </ul>
+        <div class="logout">
+            <a href="/logout_buyer/"><button type="button" class="logout" >Logout</button></a>
+        </div>
+    </nav>
+    
+    {% block content %}
+        
+    {% endblock %}
+
+    {% else %}
+    <h1>Attempted Unauthorized Access Faliure</h1>
+    {% endif %}
+    
+</body>
+<footer class="site-footer">
+    &copy; 2025 All rights reserved.
+</footer>
+</html>

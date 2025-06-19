@@ -1,0 +1,20 @@
+{% extends "seller_base.html" %}
+{% block content %}
+{%load static%}
+    <h1>Listed Products</h1>
+    <div class="product-card-container">
+        {% for Product in Product_Data %}
+        <div class="product-card">
+            <img src="{{ Product.product_img.url}}" alt="Image" width="250">
+            <hr>
+            <h3>{{ Product.product_name }}</h3>
+            <hr>
+            <h3>Price : Rs. {{ Product.product_price }}</h3>
+            <hr>
+            <a href="/seller/{{Product.id}}"><button>View Product</button></a>
+            <a href="/manageproducts/"><button>Modify Product</button></a>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+

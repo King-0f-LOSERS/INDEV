@@ -1,0 +1,30 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest</title>
+    <link rel="stylesheet" href="{% static 'registration_forms.css' %}">
+    <link rel ="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <script src="{% static 'script.js' %}"></script>
+</head>
+<body class="guest_body">
+        <nav class="navbar">
+        <div class="logo">INDEV</div>
+        <ul class="nav-links">
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/login_buyer/">Login As Buyer</a></li>
+            <li><a href="/login_seller/">Login As Seller</a></li>
+            <li><a href="/register_buyer/">Register As Buyer</a></li>
+            <li><a href="/register_seller/">Register As Seller</a></li>
+        </ul>
+        </nav>
+        {% block content %}
+        
+        {% endblock %}
+</body>
+<footer class="site-footer">
+    &copy; 2025 All rights reserved.
+</footer>
+</html>

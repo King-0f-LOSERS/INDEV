@@ -1,0 +1,57 @@
+{% extends "guest_base.html" %}
+{% load static %}
+{% block content %}
+        
+<h1>About Us</h1>
+<div class="about-card-container">
+    <div class="about-card">
+        <img src="{% static '/Partners/jaspreet.png' %}" alt="Image" width="250">
+        <h1>Jaspreet Singh</h1>
+        <h2>Role : Frontend and Backend</h2>
+        <hr>
+        <a href="https://github.com/jaspreetsingh102/"><button type="button" name="link2" class="github">View on Github</button></a>
+    </div>
+    <div class="about-card">
+        <img src="{% static '/Partners/sahil.png' %}" alt="Image" width="250">
+        <h1>Shaikh Sahil</h1>
+        <h2>Role : Backend and Database</h2>
+        <hr>
+        <a href="https://github.com/King-0f-LOSERS/"><button type="button" name="link2" class="github">View on Github</button></a>    
+    </div>
+    <div class="about-card">
+        <img src="{% static '/Partners/viraj.png' %}" alt="Image" width="250">
+        <h1>Raval Viraj</h1>
+        <h2>Role : Database and Frontend</h2>
+        <hr>
+        <a href="https://github.com/RAVALVIRAJ/"><button type="button" name="link2" class="github">View on Github</button></a>
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="card">
+        <h2>Contact Us</h2>
+        <form action='/about/' method="post">
+            {% csrf_token %} 
+            <table>
+                <tr><td>Email :</td><td><input type="email" name="email" required></input></td></tr>
+                <tr><td>Purpose :</td><td><textarea name="content" required></textarea></td></tr>
+                <input type="hidden" name="type" value="contact"></input>
+                <tr><td colspan="2"><button class="github" type="submit">Submit</button></td></tr>
+            </table> 
+        </form>
+    </div>
+    <div class="card">
+        <h2>Feedback</h2>
+        <form action='/about/' method="post">
+            {% csrf_token %} 
+            <table>
+                <tr><td>Email :</td><td><input type="email" name="email" required></input></td></tr>
+                <tr><td>Feedback :</td><td><textarea name="content" required></textarea></td></tr>
+                <input type="hidden" name="type" value="feedback"></input>
+                <tr><td colspan="2"><button class="github" type="submit">Submit</button></td></tr>
+            </table> 
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "buyer_base.html" %}
+{% block content %}
+{%load static%}
+{%load cart%}
+
+<h1>My Cart</h1>
+<div class="container">
+<table class="Cart-Table">
+    <thead>
+        <tr>
+            <th>Sno.</th>
+            <th>Product Image</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for Product in cart_Data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td><img src="{{ Product.product_img.url}}" alt="Image" width="100" height="100"></td>
+            <td>{{ Product.product_name }}</td>
+            <td>{{ Product.product_price }}</td>
+            <td>{{ Product|cart_quantity:request.session.cart }}</td>
+            <td>{{ Product|price_total:request.session.cart }}</td>
+        </tr>
+        {% endfor %}
+        <tfoot>
+            <th colspan="2">Grand Total</th>
+            <th colspan="2">{{ cart_Data|grand_price_total:request.session.cart }}</th>
+            <th colspan="2" class="checkout">
+                <a href="/checkout/"><button type="button" class="checkout" >Check Out</button></a>
+            </th>
+        </tfoot>
+    </tbody>
+</table>
+</div>
+{% endblock %}

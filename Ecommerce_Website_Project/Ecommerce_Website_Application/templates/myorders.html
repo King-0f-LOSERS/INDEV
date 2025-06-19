@@ -1,0 +1,52 @@
+{% extends "seller_base.html" %}
+{% block content %}
+{%load static%}
+    <h1>All Orders</h1>
+    <div class="order-card-container">
+        {% for Order in Orders_Data %}
+            <div class="order-card" id={{ Order.id }}>
+                <h3>Order Number : {{Order.id}}</h3>
+                <hr>
+                <h4>Buyer Details</h4>
+                <hr>
+                <h5>Username : {{Order.order_buyer_id}}</h5>
+                <h5>Name : {{Order.order_buyer_first_name}} {{Order.order_buyer_last_name}}</h5>
+                <h5>Email : {{Order.order_buyer_email}}</h5>
+                <h5>Contact : {{Order.order_buyer_contact}}</h5>
+                <h5>Address : {{Order.order_buyer_address}}</h5>
+                <hr>
+                <h4>Order Details</h4>
+                <hr>
+                <h5>Name : {{Order.order_product_name}}</h5>
+                <h5>Price : {{Order.order_product_price}}</h5>
+                <h5>Quantity : {{Order.order_quantity}}</h5>
+                <h5>Total : {{Order.order_total}}</h5>
+                <h5>Status : {{Order.get_order_status_display}}</h5>
+                {%if Order.order_status == 'Order_Placed' %}
+                    <form action="/myorders/" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name='Order_id' value="{{ Order.id }}"></input>
+                    <input type="hidden" name='Set' value="Accepted"></input>
+                    <button class="checkout" type="submit">Accept</button>
+                    </form> 
+                {%endif%}
+                {%if Order.order_status == 'Order_Placed'%}
+                    <form action="/myorders/" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name='Order_id' value="{{ Order.id }}"></input>
+                    <input type="hidden" name ='Set' value="Rejected"></input>
+                    <button class="red" type="submit">Reject</button>
+                    </form> 
+                {%endif%}
+                {%if Order.order_status == 'Cancelled' or Order.order_status == 'Delivered' or Order.order_status == 'Rejected' %}
+                    <form action="/myorders/" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name='Order_id' value="{{ Order.id }}"></input>
+                    <input type="hidden" name ='Set' value="Delete"></input>
+                    <td><button class="red" type="submit">Delete</button></td>
+                    </form> 
+                {%endif%}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
